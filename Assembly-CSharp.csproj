@@ -62,6 +62,8 @@
     <Compile Include="Assets\Scripts\WallColliderSwitch.cs" />
     <Compile Include="Assets\Scripts\GhostForm.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\StealKey.cs" />
+    <Compile Include="Assets\Scripts\OpenDoor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

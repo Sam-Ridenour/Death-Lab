@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
-{
+{  
     [SerializeField] Transform target;
     [SerializeField] Transform startingPlace;
     [SerializeField] float chaseRange = 3f;
+    
 
     NavMeshAgent navMeshAgent;
     

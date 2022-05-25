@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701823310}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 8736878357249079640}
   - component: {fileID: 3399494533793237997}
   - component: {fileID: 7332681194175338769}
+  - component: {fileID: 1550955193}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -502,6 +503,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1550955193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8736878356700506471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b3eccb6097468c49879dae0779d4448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  key: {fileID: 0}
 --- !u!1001 &2972455602730540932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -535,11 +550,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5752388524823629508, guid: ae2ea72384ee3a5468d1d52232cf408f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5752388524823629508, guid: ae2ea72384ee3a5468d1d52232cf408f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5752388524823629508, guid: ae2ea72384ee3a5468d1d52232cf408f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

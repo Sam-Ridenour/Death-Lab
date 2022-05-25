@@ -10,7 +10,6 @@ public class GhostForm : MonoBehaviour
     float ghostModeStart = 0f;
     float ghostModeCooldown = 5f;
 
-    
     MeshRenderer meshRend;
     [SerializeField] GameObject capsule;
     [SerializeField] Transform deathPoint;
@@ -32,48 +31,57 @@ public class GhostForm : MonoBehaviour
 
     void GhostMode()
     {
-        bool rightClick = Input.GetButtonDown("Fire2");
-        
+            bool ghostModeClick = Input.GetButtonDown("Fire2");
 
-        if (Time.time > ghostModeStart)
-        {
-            if (ghostMode == false && rightClick)
+            if (Time.time > ghostModeStart)
             {
-                EnteringGhostMode();
-                ghostModeStart = Time.time + ghostModeCooldown;
+                if (ghostMode == false && ghostModeClick)
+                {
+                    EnteringGhostMode();
+                    ghostModeStart = Time.time + ghostModeCooldown;
+                }
+                else if (spawnPoint == true)
+                {
+                    ExitingGhostMode();
+                }
             }
-            else if(spawnPoint == true)
+            else if (ghostMode == true && ghostModeClick)
             {
                 ExitingGhostMode();
             }
-        }
-        else if (ghostMode == true && rightClick)
-        {
-            ExitingGhostMode();
-        }
     }
 
     // EnteringGhostMode() add:anim
     void EnteringGhostMode()
-    {
-        capsule.SetActive(true);
-        audioSource.PlayOneShot(deathfx);
-        ghostMode = true;
-        deathPoint.parent = null;
-        spawnPoint = true;
-        meshRend.enabled = false;
-        Debug.Log("You have entered Ghost Mode!");
+    {       
+        // turning on deathpoint mesh
+            capsule.SetActive(true);
+            audioSource.PlayOneShot(deathfx);
+            ghostMode = true;
+        // taking of the deathpoint parent
+            deathPoint.parent = null;
+        // setting a spawnpoint for when player is visible again
+            spawnPoint = true;
+        // turning off mesh
+            meshRend.enabled = false;
+            Debug.Log("You have entered Ghost Mode!");       
     }
 
     // ExitingGhostMode() add:anim
     void ExitingGhostMode()
-    {
-        capsule.SetActive(false);
+    {      
         audioSource.PlayOneShot(backToLifeBreathfx);
+        // returning back to deathpoint position
         transform.position = deathPoint.transform.position;
+        // reattaching deathpoint back to player
         deathPoint.parent = GameObject.FindWithTag("Player").transform;
+        // player coming back to life
+        capsule.SetActive(false);
+        // visible again
         ghostMode = false;
+        // returning to spawnpoint and setting false so we can set another spawnpoint on rightclick
         spawnPoint = false;
+        // turning on mesh
         meshRend.enabled = true;
         Debug.Log("You have exited Ghost Mode!");
     }  
