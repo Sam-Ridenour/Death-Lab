@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 3399494533793237997}
   - component: {fileID: 7332681194175338769}
   - component: {fileID: 1550955193}
+  - component: {fileID: 1428530938909350542}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -414,7 +415,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8736878356700506471}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -515,8 +516,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3eccb6097468c49879dae0779d4448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  key: {fileID: 0}
+  keyCount: 0
+  keys: []
+--- !u!114 &1428530938909350542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8736878356700506471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e4bcf37ce472d45a4db702b555ee92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors: []
 --- !u!1001 &2972455602730540932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -571,6 +585,10 @@ PrefabInstance:
     - target: {fileID: 7765801153186219193, guid: ae2ea72384ee3a5468d1d52232cf408f, type: 3}
       propertyPath: m_Name
       value: Capsule
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765801153186219193, guid: ae2ea72384ee3a5468d1d52232cf408f, type: 3}
+      propertyPath: m_TagString
+      value: Death Point
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae2ea72384ee3a5468d1d52232cf408f, type: 3}

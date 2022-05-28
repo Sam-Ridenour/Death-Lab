@@ -6,7 +6,7 @@ public class StealKey : MonoBehaviour
 {
     float distanceToKey = Mathf.Infinity;
     float stealRange = 3f;
-    int keyCount = 0;
+    public int keyCount = 0;
     bool isKeyThere = false;
 
     [SerializeField] GameObject[] keys;
@@ -15,6 +15,7 @@ public class StealKey : MonoBehaviour
     void Start()
     {
         ghostForm = gameObject.GetComponent<GhostForm>();
+        keys = GameObject.FindGameObjectsWithTag("Key");
     }
 
     void Update()
@@ -31,6 +32,7 @@ public class StealKey : MonoBehaviour
         {
             bool stealingClick = Input.GetButtonDown("Fire1");
             distanceToKey = Vector3.Distance(keys[i].transform.position, transform.position);
+
             // if the key is active then the key is there
             if (keys[i].activeSelf)
             {
@@ -48,7 +50,7 @@ public class StealKey : MonoBehaviour
                 keyCount++;
                 Debug.Log("You have " + keyCount + " keys out of " + keys.Length);
             }
-            else if (stealingClick && isKeyThere == false)
+            else if (stealingClick && isKeyThere == false && distanceToKey <= stealRange)
             {
                 Debug.Log("There is no key here.");
             }

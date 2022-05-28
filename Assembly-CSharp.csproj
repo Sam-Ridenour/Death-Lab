@@ -57,13 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
+    <Compile Include="Assets\Scripts\StealKey.cs" />
+    <Compile Include="Assets\Scripts\OpenDoor.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\Scripts\WallColliderSwitch.cs" />
+    <Compile Include="Assets\Scripts\BodyGuardAI.cs" />
     <Compile Include="Assets\Scripts\GhostForm.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\StealKey.cs" />
-    <Compile Include="Assets\Scripts\OpenDoor.cs" />
+    <Compile Include="Assets\Scripts\JanitorAI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

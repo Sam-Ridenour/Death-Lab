@@ -12,6 +12,7 @@ public class GhostForm : MonoBehaviour
 
     MeshRenderer meshRend;
     [SerializeField] GameObject capsule;
+    //[SerializeField] Transform blood;
     [SerializeField] Transform deathPoint;
     [SerializeField] AudioClip backToLifeBreathfx;
     [SerializeField] AudioClip deathfx;
@@ -53,9 +54,11 @@ public class GhostForm : MonoBehaviour
 
     // EnteringGhostMode() add:anim
     void EnteringGhostMode()
-    {       
+    {
+        // placing blood down
+        //Instantiate(blood, gameObject.transform.position, Quaternion.identity);
         // turning on deathpoint mesh
-            capsule.SetActive(true);
+        capsule.SetActive(true);
             audioSource.PlayOneShot(deathfx);
             ghostMode = true;
         // taking of the deathpoint parent
@@ -69,7 +72,7 @@ public class GhostForm : MonoBehaviour
 
     // ExitingGhostMode() add:anim
     void ExitingGhostMode()
-    {      
+    {
         audioSource.PlayOneShot(backToLifeBreathfx);
         // returning back to deathpoint position
         transform.position = deathPoint.transform.position;
