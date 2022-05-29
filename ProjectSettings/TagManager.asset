@@ -14,6 +14,7 @@ TagManager:
   - Death Point
   - Janitor
   - Patrol Guard
+  - Doctor
   layers:
   - Default
   - TransparentFX

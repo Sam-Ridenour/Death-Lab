@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EnemyAI : MonoBehaviour
 {  
     [SerializeField] Transform target;
     [SerializeField] Transform startingPlace;
-    [SerializeField] float chaseRange = 3f;
-    
+    [SerializeField] float chaseRange = 3f;    
 
     NavMeshAgent navMeshAgent;
-    
+
     float distanceToTarget = Mathf.Infinity;
     bool isProvoked = false;
 
@@ -51,35 +51,17 @@ public class EnemyAI : MonoBehaviour
             navMeshAgent.SetDestination(startingPlace.position);
         }
     }
-
     
     void EngageTarget()
     {      
             // is the distance to the target greater than the ai's stopping distance
             if (distanceToTarget >= navMeshAgent.stoppingDistance)
             {
-                ChaseTarget();
-            }
-            // is the distance to the target less than the ai's stopping distance
-            if (distanceToTarget <= navMeshAgent.stoppingDistance)
-            {
-                CatchTarget();
-            }       
+                // chasing player according to players current position
+                navMeshAgent.SetDestination(target.position);
+            }    
     }
    
-    void ChaseTarget()
-    {
-        // chasing player according to players current position
-        navMeshAgent.SetDestination(target.position);
-    }
-    
-    
-    void CatchTarget()
-    {
-        // catching player
-        Debug.Log("I have caught " + target.name);
-    }
-
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

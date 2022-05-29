@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class BodyGuardAI : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    [SerializeField] GameObject target;
     [SerializeField] GameObject janitor;
     [SerializeField] GameObject[] patrolPoint;
-    float chaseRange = 5f;
-    float extendedChaseRange = 12f;
-
+    
     NavMeshAgent navMeshAgent;
 
     float distanceToTarget = Mathf.Infinity;
     float distanceToPatrolPoint = Mathf.Infinity;
     float distanceToJanitor = Mathf.Infinity;
+    float chaseRange = 5f;
+    float extendedChaseRange = 12f;
     bool isProvoked;
     
 
@@ -91,26 +92,11 @@ public class BodyGuardAI : MonoBehaviour
         // is the distance to the target greater than the ai's stopping distance
         if (distanceToTarget <= chaseRange)
         {
-            ChaseTarget();
-        }
-        // is the distance to the target less than the ai's stopping distance
-        if (distanceToTarget <= navMeshAgent.stoppingDistance)
-        {
-            CatchTarget();
+            // chasing player according to players current position
+            navMeshAgent.SetDestination(target.transform.position);
         }
     }
 
-    void ChaseTarget()
-    {
-        // chasing player according to players current position
-        navMeshAgent.SetDestination(target.position);
-    }
-
-    void CatchTarget()
-    {
-        // catching player
-        Debug.Log("I have caught " + target.name);
-    }
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
