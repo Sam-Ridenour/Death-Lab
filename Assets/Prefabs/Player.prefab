@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 7332681194175338769}
   - component: {fileID: 1550955193}
   - component: {fileID: 1428530938909350542}
+  - component: {fileID: 6937716167498389260}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -403,11 +404,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39fdf02e8c1c5b45b627bc6e27bde01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostMode: 0
   capsule: {fileID: 4793487653878389565}
   deathPoint: {fileID: 1701823311}
   backToLifeBreathfx: {fileID: 8300000, guid: ac6e65f2933e4014eb0e576423609be8, type: 3}
   deathfx: {fileID: 8300000, guid: 6d7ae260eabcff649955bce89d343e18, type: 3}
+  ghostMode: 0
 --- !u!82 &7332681194175338769
 AudioSource:
   m_ObjectHideFlags: 0
@@ -415,7 +416,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8736878356700506471}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -531,6 +532,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doors: []
+--- !u!114 &6937716167498389260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8736878356700506471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcdf2f51ef3532547b4a9556990ec0d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2972455602730540932
 PrefabInstance:
   m_ObjectHideFlags: 0

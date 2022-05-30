@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\GhostForm.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\JanitorAI.cs" />
+    <Compile Include="Assets\Scripts\QuitApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
