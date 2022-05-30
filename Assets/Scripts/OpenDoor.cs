@@ -39,7 +39,7 @@ public class OpenDoor : MonoBehaviour
                 if (key == true)
                 {
                     stealKey.keyCount--;
-                    doors[i].transform.Translate(Vector3.right, doors[i].transform);
+                    doors[i].transform.Translate(Vector3.right * 1.5f, doors[i].transform);
                     doors[i].tag = "Dormant Door";
                     Debug.Log("You have unlocked this door.");
                 }

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.SceneManagement;
 
 public class JanitorAI : MonoBehaviour
 {
@@ -43,6 +42,21 @@ public class JanitorAI : MonoBehaviour
                 {
                     hasBeenNotified = true;
                 }
+            }
+            if(distanceToPlayer <= bubbleRange && playerMesh.enabled)
+            {
+                EngageTarget();
+                bubbleRange = bigBubbleRange;
+                if(distanceToPlayer >= bubbleRange)
+                {
+                    bubbleRange = 6f;
+                }
+            }
+            else if (!playerMesh.enabled && distanceToTarget <= bubbleRange)
+            {
+                bubbleRange = 6f;
+                FindTargetDeathPoint();
+
             }
         }
         else if (hasBeenNotified)

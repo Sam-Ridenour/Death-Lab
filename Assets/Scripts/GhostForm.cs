@@ -17,7 +17,7 @@ public class GhostForm : MonoBehaviour
     bool spawnPoint = false;
 
     float ghostModeStart = 0f;
-    float ghostModeCooldown = 5f;
+    float ghostModeCooldown = 8f;
     float delay = 3f;
 
     void Start()
@@ -49,10 +49,10 @@ public class GhostForm : MonoBehaviour
                 ExitingGhostMode();
             }
         }
-        else if (ghostMode == true && ghostModeClick)
+        /*else if (ghostMode == true && ghostModeClick)
         {
             ExitingGhostMode();
-        }
+        }*/
     }
 
     // EnteringGhostMode() add:anim
